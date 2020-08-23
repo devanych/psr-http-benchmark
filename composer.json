@@ -1,0 +1,22 @@
+{
+    "name": "devanych/psr-http-benchmark",
+    "description": "Benchmark of PSR-7 and PSR-17",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evgeniy Zyubin",
+            "email": "mail@devanych.ru",
+            "homepage": "https://devanych.ru/",
+            "role": "Founder and lead developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/psr7": "^1.6",
+        "httpsoft/http-message": "^1.0",
+        "laminas/laminas-diactoros": "^2.3",
+        "nyholm/psr7": "^1.3",
+        "slim/psr7": "^1.1"
+    }
+}

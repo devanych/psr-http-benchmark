@@ -5,19 +5,12 @@ declare(strict_types=1);
 final class CreatorFactory
 {
     private string $method = 'GET';
-    private string $protocol = '1.1';
     private string $file = __DIR__ . '/file.txt';
     private string $uri = 'https://example.com/path?query=string#fragment';
-    private array $headers = ['Host' => 'example.com', 'Content-Type' => 'text/plain'];
-
-    public function resource()
-    {
-        return fopen('php://temp', 'wb+');
-    }
 
     public function createRequest(Psr\Http\Message\RequestFactoryInterface $factory): void
     {
-        $factory->createRequest($this->method, $this->uri, $this->headers, $this->resource(), $this->protocol);
+        $factory->createRequest($this->method, $this->uri);
     }
 
     public function createServerRequest(Psr\Http\Message\ServerRequestFactoryInterface $factory): void
@@ -48,7 +41,7 @@ final class CreatorFactory
         $factory->createStreamFromFile($this->file);
         $stream->rewind();
         $stream->read(3);
-        $factory->createStreamFromResource($this->resource());
+        $factory->createStreamFromResource(fopen('php://temp', 'wb+'));
         $stream->rewind();
         $stream->read(3);
     }

@@ -42,9 +42,15 @@ final class CreatorFactory
 
     public function createStream(Psr\Http\Message\StreamFactoryInterface $factory): void
     {
-        $factory->createStream('content');
+        $stream = $factory->createStream('content');
+        $stream->rewind();
+        $stream->read(3);
         $factory->createStreamFromFile($this->file);
+        $stream->rewind();
+        $stream->read(3);
         $factory->createStreamFromResource($this->resource());
+        $stream->rewind();
+        $stream->read(3);
     }
 
     public function createUploadedFile(

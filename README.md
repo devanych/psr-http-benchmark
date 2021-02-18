@@ -55,22 +55,22 @@ Total time: 1.7094 s
 
 | Runs: 30,000         | Guzzle    | HttpSoft  | Laminas   | Nyholm    | Slim      |
 |----------------------|-----------|-----------|-----------|-----------|-----------|
-| Runs per second      | 15422     | 17550     | 13402     | 16588     | 12756     |
-| Average time per run | 0.0648 ms | 0.0570 ms | 0.0746 ms | 0.0603 ms | 0.0784 ms |
-| Total time           | 1.9452 s  | 1.7094 s  | 2.2384 s  | 1.8085 s  | 2.3517 s  |
+| Runs per second      | 15422     | 17550     | 13402     | 18213     | 12756     |
+| Average time per run | 0.0648 ms | 0.0570 ms | 0.0746 ms | 0.0549 ms | 0.0784 ms |
+| Total time           | 1.9452 s  | 1.7094 s  | 2.2384 s  | 1.6471 s  | 2.3517 s  |
 
 ---
 
 | Runs: 50,000         | Guzzle    | HttpSoft  | Laminas   | Nyholm    | Slim      |
 |----------------------|-----------|-----------|-----------|-----------|-----------|
-| Runs per second      | 15344     | 17588     | 13565     | 16730     | 12568     |
-| Average time per run | 0.0652 ms | 0.0569 ms | 0.0737 ms | 0.0598 ms | 0.0796 ms |
-| Total time           | 3.2585 s  | 2.8427 s  | 3.6859 s  | 2.9886 s  | 3.9781 s  |
+| Runs per second      | 15344     | 17588     | 13565     | 18138     | 12568     |
+| Average time per run | 0.0652 ms | 0.0569 ms | 0.0737 ms | 0.0551 ms | 0.0796 ms |
+| Total time           | 3.2585 s  | 2.8427 s  | 3.6859 s  | 2.7565 s  | 3.9781 s  |
 
 ---
 
 | Runs: 100,000        | Guzzle    | HttpSoft  | Laminas   | Nyholm    | Slim      |
 |----------------------|-----------|-----------|-----------|-----------|-----------|
-| Runs per second      | 15244     | 17618     | 13521     | 16497     | 12437     |
-| Average time per run | 0.0656 ms | 0.0575 ms | 0.0740 ms | 0.0606 ms | 0.0804 ms |
-| Total time           | 6.5597 s  | 5.7547 s  | 7.3959 s  | 6.0616 s  | 8.0403 s  |
+| Runs per second      | 15244     | 17618     | 13521     | 18065     | 12437     |
+| Average time per run | 0.0656 ms | 0.0575 ms | 0.0740 ms | 0.0554 ms | 0.0804 ms |
+| Total time           | 6.5597 s  | 5.7547 s  | 7.3959 s  | 5.5354 s  | 8.0403 s  |

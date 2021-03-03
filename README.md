@@ -11,9 +11,7 @@ Install:
 ```
 git clone git@github.com:devanych/psr-http-benchmark.git
 cd psr-http-benchmark
-
 composer update
-php -S 127.0.0.1:8080
 ```
 
 Runs:

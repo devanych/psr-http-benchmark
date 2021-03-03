@@ -2,47 +2,54 @@
 
 declare(strict_types=1);
 
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ServerRequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\UploadedFileFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
+
 require_once __DIR__ . '/GuzzleFactory.php';
 
 return [
     'guzzle' => [
-        'RequestFactory' => GuzzleFactory::class,
-        'ServerRequestFactory' => GuzzleFactory::class,
-        'ResponseFactory' => GuzzleFactory::class,
-        'StreamFactory' => GuzzleFactory::class,
-        'UploadedFileFactory' => GuzzleFactory::class,
-        'UriFactory' => GuzzleFactory::class,
+        RequestFactoryInterface::class => GuzzleFactory::class,
+        ResponseFactoryInterface::class => GuzzleFactory::class,
+        ServerRequestFactoryInterface::class => GuzzleFactory::class,
+        StreamFactoryInterface::class => GuzzleFactory::class,
+        UploadedFileFactoryInterface::class => GuzzleFactory::class,
+        UriFactoryInterface::class => GuzzleFactory::class,
     ],
     'httpsoft' => [
-        'RequestFactory' => HttpSoft\Message\RequestFactory::class,
-        'ServerRequestFactory' => HttpSoft\Message\ServerRequestFactory::class,
-        'ResponseFactory' => HttpSoft\Message\ResponseFactory::class,
-        'StreamFactory' => HttpSoft\Message\StreamFactory::class,
-        'UploadedFileFactory' => HttpSoft\Message\UploadedFileFactory::class,
-        'UriFactory' => HttpSoft\Message\UriFactory::class,
+        RequestFactoryInterface::class => HttpSoft\Message\RequestFactory::class,
+        ResponseFactoryInterface::class => HttpSoft\Message\ResponseFactory::class,
+        ServerRequestFactoryInterface::class => HttpSoft\Message\ServerRequestFactory::class,
+        StreamFactoryInterface::class => HttpSoft\Message\StreamFactory::class,
+        UploadedFileFactoryInterface::class => HttpSoft\Message\UploadedFileFactory::class,
+        UriFactoryInterface::class => HttpSoft\Message\UriFactory::class,
     ],
     'laminas' => [
-        'RequestFactory' => Laminas\Diactoros\RequestFactory::class,
-        'ServerRequestFactory' => Laminas\Diactoros\ServerRequestFactory::class,
-        'ResponseFactory' => Laminas\Diactoros\ResponseFactory::class,
-        'StreamFactory' => Laminas\Diactoros\StreamFactory::class,
-        'UploadedFileFactory' => Laminas\Diactoros\UploadedFileFactory::class,
-        'UriFactory' => Laminas\Diactoros\UriFactory::class,
+        RequestFactoryInterface::class => Laminas\Diactoros\RequestFactory::class,
+        ResponseFactoryInterface::class => Laminas\Diactoros\ResponseFactory::class,
+        ServerRequestFactoryInterface::class => Laminas\Diactoros\ServerRequestFactory::class,
+        StreamFactoryInterface::class => Laminas\Diactoros\StreamFactory::class,
+        UploadedFileFactoryInterface::class => Laminas\Diactoros\UploadedFileFactory::class,
+        UriFactoryInterface::class => Laminas\Diactoros\UriFactory::class,
     ],
     'nyholm' => [
-        'RequestFactory' => Nyholm\Psr7\Factory\Psr17Factory::class,
-        'ServerRequestFactory' => Nyholm\Psr7\Factory\Psr17Factory::class,
-        'ResponseFactory' => Nyholm\Psr7\Factory\Psr17Factory::class,
-        'StreamFactory' => Nyholm\Psr7\Factory\Psr17Factory::class,
-        'UploadedFileFactory' => Nyholm\Psr7\Factory\Psr17Factory::class,
-        'UriFactory' => Nyholm\Psr7\Factory\Psr17Factory::class,
+        RequestFactoryInterface::class => Nyholm\Psr7\Factory\Psr17Factory::class,
+        ResponseFactoryInterface::class => Nyholm\Psr7\Factory\Psr17Factory::class,
+        ServerRequestFactoryInterface::class => Nyholm\Psr7\Factory\Psr17Factory::class,
+        StreamFactoryInterface::class => Nyholm\Psr7\Factory\Psr17Factory::class,
+        UploadedFileFactoryInterface::class => Nyholm\Psr7\Factory\Psr17Factory::class,
+        UriFactoryInterface::class => Nyholm\Psr7\Factory\Psr17Factory::class,
     ],
     'slim' => [
-        'RequestFactory' => Slim\Psr7\Factory\RequestFactory::class,
-        'ServerRequestFactory' => Slim\Psr7\Factory\ServerRequestFactory::class,
-        'ResponseFactory' => Slim\Psr7\Factory\ResponseFactory::class,
-        'StreamFactory' => Slim\Psr7\Factory\StreamFactory::class,
-        'UploadedFileFactory' => Slim\Psr7\Factory\UploadedFileFactory::class,
-        'UriFactory' => Slim\Psr7\Factory\UriFactory::class,
+        RequestFactoryInterface::class => Slim\Psr7\Factory\RequestFactory::class,
+        ResponseFactoryInterface::class => Slim\Psr7\Factory\ResponseFactory::class,
+        ServerRequestFactoryInterface::class => Slim\Psr7\Factory\ServerRequestFactory::class,
+        StreamFactoryInterface::class => Slim\Psr7\Factory\StreamFactory::class,
+        UploadedFileFactoryInterface::class => Slim\Psr7\Factory\UploadedFileFactory::class,
+        UriFactoryInterface::class => Slim\Psr7\Factory\UriFactory::class,
     ],
 ];

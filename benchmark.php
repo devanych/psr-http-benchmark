@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ServerRequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\UploadedFileFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
+
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/assets/CreatorFactory.php';
 $packages = require_once __DIR__ . '/assets/packages.php';
@@ -23,14 +30,19 @@ $package = $packages[$argv[1]];
 
 $runs = isset($argv[2]) ? (int) $argv[2] : 30000;
 $start = microtime(true);
+
 for ($i = 0; $i < $runs; $i++) {
-    $creator->createRequest(new $package['RequestFactory']);
-    $creator->createServerRequest(new $package['ServerRequestFactory']);
-    $creator->createResponse(new $package['ResponseFactory']);
-    $creator->createStream(new $package['StreamFactory']);
-    $creator->createUploadedFile(new $package['UploadedFileFactory'], new $package['StreamFactory']);
-    $creator->createUri(new $package['UriFactory']);
+    $creator->createRequest(new $package[RequestFactoryInterface::class]());
+    $creator->createResponse(new $package[ResponseFactoryInterface::class]());
+    $creator->createServerRequest(new $package[ServerRequestFactoryInterface::class]());
+    $creator->createStream(new $package[StreamFactoryInterface::class]());
+    $creator->createUploadedFile(
+        new $package[UploadedFileFactoryInterface::class](),
+        new $package[StreamFactoryInterface::class](),
+    );
+    $creator->createUri(new $package[UriFactoryInterface::class]());
 }
+
 $totalTime = microtime(true) - $start;
 
 echo 'Runs: ' . number_format($runs) . PHP_EOL;

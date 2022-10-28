@@ -38,10 +38,10 @@ final class CreatorFactory
         $stream = $factory->createStream('content');
         $stream->rewind();
         $stream->read(3);
-        $factory->createStreamFromFile($this->file);
+        $stream = $factory->createStreamFromFile($this->file);
         $stream->rewind();
         $stream->read(3);
-        $factory->createStreamFromResource(fopen('php://temp', 'wb+'));
+        $stream = $factory->createStreamFromResource(fopen('php://temp', 'wb+'));
         $stream->rewind();
         $stream->read(3);
     }

@@ -52,4 +52,12 @@ return [
         UploadedFileFactoryInterface::class => Slim\Psr7\Factory\UploadedFileFactory::class,
         UriFactoryInterface::class => Slim\Psr7\Factory\UriFactory::class,
     ],
+    'fatfree' => [
+        RequestFactoryInterface::class => F3\Http\Factory\Psr17Factory::class,
+        ResponseFactoryInterface::class => F3\Http\Factory\Psr17Factory::class,
+        ServerRequestFactoryInterface::class => F3\Http\Factory\Psr17Factory::class,
+        StreamFactoryInterface::class => F3\Http\Factory\Psr17Factory::class,
+        UploadedFileFactoryInterface::class => F3\Http\Factory\Psr17Factory::class,
+        UriFactoryInterface::class => F3\Http\Factory\Psr17Factory::class,
+    ],
 ];
